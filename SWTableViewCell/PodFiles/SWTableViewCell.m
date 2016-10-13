@@ -301,7 +301,9 @@ static NSString * const kTableViewPanState = @"state";
 
 - (void)layoutSubviews
 {
+    layoutUpdating = YES;
     [super layoutSubviews];
+    layoutUpdating = NO;
     
     // Offset the contentView origin so that it appears correctly w/rt the enclosing scroll view (to which we moved it).
     CGRect frame = self.contentView.frame;
